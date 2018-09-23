@@ -10,6 +10,7 @@ def F(M,m,pos1,pos2):
     r = norm(pos2-pos1)
     return #input the correct function
 
+#Constants
 G = 6.7e-11 # Universal gravitational constant
 Msun = 1.989e30 # Mass of sun (kg)
 Me = 5.972e24 # Mass of Earth (kg)
