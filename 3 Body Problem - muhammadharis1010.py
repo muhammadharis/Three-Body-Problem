@@ -5,9 +5,6 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as an
 import math 
 
-
-
-#------------------------- PHYSICAL PARAMETERS -------------------------
 # Define force of Gravity
 def F(M,m,pos1,pos2):
     r = norm(pos2-pos1)
