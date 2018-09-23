@@ -13,7 +13,6 @@ def F(M,m,pos1,pos2):
     r = norm(pos2-pos1)
     return #input the correct function
 
-#------------------------- PHYSICAL PARAMETERS -------------------------
 G = 6.7e-11 # Universal gravitational constant
 Msun = 1.989e30 # Mass of sun (kg)
 Me = 5.972e24 # Mass of Earth (kg)
@@ -22,18 +21,12 @@ Mm = 7.348e22 # Mass of Moon (kg)
 esd = 1.496e11 # Earth-Sun distance (m)
 emd = 3.844e8 # Earth-Moon distance (m)
 
-Ve = 2.93e4 # Magnetude of velocity of Earth around the Sun (m/s)
-Vm = 1.02e3 # Magnetude of velocity of Moon around the Earth (m/s)
+Ve = 2.93e4 # Magnitude of velocity of Earth around the Sun (m/s)
+Vm = 1.02e3 # Magnitude of velocity of Moon around the Earth (m/s)
 
 dt = 100. # Time step (s)
 t_end = 3.154e7 #one year in seconds
 t = np.linspace(0.,t_end,t_end/dt)
-
-
-
-
-
-#Create Arrays to Store the Position of Each Starts Respectively
 
 Xsun = np.zeros(len(t))
 Ysun = np.zeros (len(t))
@@ -88,15 +81,7 @@ def forcefuncx(x1,x2,y1,y2,m1,m2):
 def forcefuncy (x1,x2,y1,y2,m1,m2):
     return -(G*m1*m2*(y2-y1))/ (math.sqrt ((x2-x1)**2 + (y2-y1)**2))**3
     
-    #calculate distance between two planets
 
-    #calculate the force
-
-
-## TUESDAY AM: create a plot of the gravitational force as a function of distance
-
-
-## TUESDAY PM: solve the ODE
 
 for i in range (0,len(t)-1):
     #Update:Velocity of the Earth (Affected by both the Moon and the Sun)
@@ -123,14 +108,6 @@ for i in range (0,len(t)-1):
     Xmoon[i+1] = Xmoon[i] + Vxmoon[i+1] *dt
     Ymoon[i+1] = Ymoon[i] + Vymoon[i+1] *dt
     
-
-
-
-
-
-
-
-
 
 f = rfftfreq(len(t),3.171e-6) 
 
@@ -188,15 +165,6 @@ Km = (0.5*Mm*MagM**2)
 #Total Energy of the System
 
 Te = Pes + Pem + Pms + Ke + Ks + Km
-
-
-
-## WEDNESDAY: calculate the frequency of the orbit using Fourier analysis
-## THURSDAY
-
-
-
-
 
 
 
